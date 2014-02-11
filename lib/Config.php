@@ -49,8 +49,11 @@ class Config extends Singleton
 	 * @var array
 	 */
 	private $connections = array();
-
-	/**
+        /**
+         * @var table prefix
+         */
+        static $pre_table = '';
+        /**
 	 * Directory for the auto_loading of model classes.
 	 *
 	 * @see activerecord_autoload
@@ -300,5 +303,13 @@ class Config extends Singleton
 	{
 		Cache::initialize($url,$options);
 	}
-};
-?>
+        
+        /*
+         * @ 设置表前缀
+         */
+        public function set_table_pre($pre){
+            static::$pre_table = $pre;
+        }
+        
+//        public function 
+}
